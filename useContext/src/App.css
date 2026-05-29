@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  border: 1px solid rgb(163, 156, 156);
+  justify-content: space-evenly;
+  min-height: 70px;
+  align-items: center;
+}
+
+.main {
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.main button {
+  padding: 20px 30px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: #ffa8a8;
+  font-size: 18px;
+}
+
+.main__app {
+  background: #000;
+  color: white;
+}
