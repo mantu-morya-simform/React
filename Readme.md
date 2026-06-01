@@ -1,5 +1,383 @@
 # Daily Progress
 
+## 2026-06-01
+
+# ⚔️ Redux vs Context API (React State Management)
+
+## 🔹 Overview
+
+- **Context API**
+  - Built-in feature of React
+  - Used for sharing data globally without prop drilling
+
+- **Redux**
+  - External state management library
+  - Provides structured and scalable state handling
+
+---
+
+## 🔹 When to Use
+
+### ✅ Use Context API when:
+
+- Small to medium applications
+- Simple global state (theme, auth, language)
+- Minimal state updates
+- No complex logic
+
+---
+
+### ✅ Use Redux when:
+
+- Large-scale applications
+- Complex state logic
+- Many components depend on same state
+- Frequent updates (cart, filters, real-time data)
+- Need debugging tools
+
+---
+
+## 🔹 Key Differences
+
+| Feature        | Context API          | Redux                             |
+| -------------- | -------------------- | --------------------------------- |
+| Type           | Built-in             | External library                  |
+| Setup          | Simple               | More setup                        |
+| Boilerplate    | Minimal              | More (reduced with Redux Toolkit) |
+| Performance    | Can cause re-renders | Optimized updates                 |
+| Scalability    | Limited              | Highly scalable                   |
+| Debugging      | Basic                | Advanced (DevTools)               |
+| Middleware     | ❌ No                | ✅ Yes                            |
+| Async Handling | Manual               | Built-in support (Thunk, Saga)    |
+
+---
+
+## 🔹 Data Flow
+
+### Context API
+
+- Provider → Consumer
+- Direct value passing
+
+### Redux
+
+- Store → Action → Reducer → Updated State
+- Unidirectional predictable flow
+
+---
+
+## 🔹 Example
+
+### Context API
+
+```js
+const ThemeContext = createContext();
+
+<ThemeContext.Provider value={theme}>
+  <App />
+</ThemeContext.Provider>;
+```
+
+---
+
+### Redux
+
+```js
+dispatch({ type: "ADD_TO_CART", payload: item });
+```
+
+Reducer:
+
+```js
+function cartReducer(state, action) {
+  switch (action.type) {
+    case "ADD":
+      return [...state, action.payload];
+  }
+}
+```
+
+---
+
+## 🔹 Pros & Cons
+
+### Context API
+
+#### ✅ Pros
+
+- Easy to use
+- No extra libraries
+- Good for simple cases
+
+#### ❌ Cons
+
+- Performance issues with frequent updates
+- Not ideal for large apps
+- No built-in dev tools
+
+---
+
+### Redux
+
+#### ✅ Pros
+
+- Predictable state updates
+- Excellent debugging
+- Middleware support
+- Scalable architecture
+
+#### ❌ Cons
+
+- Boilerplate (less with Redux Toolkit)
+- Learning curve
+- Overkill for small apps
+
+---
+
+## 🔹 Best Practice
+
+- Use **Context API** for:
+  - Theme
+  - Authentication
+  - Simple shared state
+
+- Use **Redux** for:
+  - E-commerce cart
+  - Dashboard data
+  - Complex state logic
+  - Large applications
+
+---
+
+## 🔹 Final Thought
+
+- Context = Simple global sharing
+- Redux = Full state management system
+
+👉 Choose based on **app complexity**, not preference
+
+# 📋 React Hook Form (RHF)
+
+## 🔹 What is React Hook Form?
+
+- **React Hook Form (RHF)** is a library for handling forms in React
+- Focuses on:
+  - ✅ Performance
+  - ✅ Minimal re-renders
+  - ✅ Simple validation
+
+- Uses **uncontrolled components** (via refs) instead of controlled inputs
+
+---
+
+## 🔹 Why use React Hook Form?
+
+- Avoids unnecessary re-renders
+- Cleaner and less boilerplate than traditional forms
+- Easy validation handling
+- Better performance than controlled forms
+
+---
+
+## 🔹 Installation
+
+```bash
+npm install react-hook-form
+```
+
+---
+
+## 🔹 Basic Example
+
+```jsx
+import { useForm } from "react-hook-form";
+
+function Form() {
+  const { register, handleSubmit } = useForm();
+
+  function onSubmit(data) {
+    console.log(data);
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("name")} placeholder="Name" />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+---
+
+## 🔹 Core Concepts
+
+### 1. useForm Hook
+
+- Main hook to manage form state
+
+```js
+const {
+  register,
+  handleSubmit,
+  formState: { errors },
+} = useForm();
+```
+
+---
+
+### 2. register
+
+- Connects input fields to RHF
+
+```js
+<input {...register("email")} />
+```
+
+---
+
+### 3. handleSubmit
+
+- Handles form submission
+
+```js
+<form onSubmit={handleSubmit(onSubmit)} />
+```
+
+---
+
+### 4. formState
+
+- Contains:
+  - errors
+  - isDirty
+  - isSubmitting
+
+---
+
+## 🔹 Validation
+
+### Required field
+
+```js
+<input {...register("email", { required: "Email is required" })} />
+```
+
+---
+
+### Pattern (Email validation)
+
+```js
+<input
+  {...register("email", {
+    pattern: {
+      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      message: "Invalid email format",
+    },
+  })}
+/>
+```
+
+---
+
+### Show Errors
+
+```js
+{
+  errors.email && <p>{errors.email.message}</p>;
+}
+```
+
+---
+
+## 🔹 Default Values
+
+```js
+const { register } = useForm({
+  defaultValues: {
+    name: "Mantu",
+  },
+});
+```
+
+---
+
+## 🔹 Reset Form
+
+```js
+const { reset } = useForm();
+
+reset();
+```
+
+---
+
+## 🔹 Watch Values
+
+```js
+const { watch } = useForm();
+
+const name = watch("name");
+```
+
+---
+
+## 🔹 Controlled Components (Controller)
+
+Used for custom inputs (like UI libraries)
+
+```js
+import { Controller } from "react-hook-form";
+
+<Controller
+  name="email"
+  control={control}
+  render={({ field }) => <input {...field} />}
+/>;
+```
+
+---
+
+## 🔹 Advantages
+
+- 🚀 High performance
+- 🧠 Less re-rendering
+- 🧩 Easy integration
+- 🧾 Built-in validation
+
+---
+
+## 🔹 Disadvantages
+
+- Slight learning curve
+- Different from traditional controlled inputs
+- Debugging can feel indirect initially
+
+---
+
+## 🔹 When to Use
+
+- Forms with validation
+- Large forms
+- Performance-sensitive apps
+- When avoiding boilerplate
+
+---
+
+## 🔹 When NOT to Use
+
+- Very small/simple forms
+- When you need full controlled input behavior
+
+---
+
+## 🔹 Final Thought
+
+- React Hook Form = **Fast + Clean + Scalable forms**
+- Better alternative to:
+  - manual state handling
+  - heavy libraries like Formik
+
 ## 2026-05-27
 
 # React Router Notes
