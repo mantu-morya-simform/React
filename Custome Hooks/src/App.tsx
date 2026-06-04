@@ -8,13 +8,14 @@ import Search from "./component/Search";
 import SetTheme from "./component/SetTheme";
 import Status from "./component/Status";
 import Toggle from "./component/Toggle";
+import UserProfile from "./component/UserProfile";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   useLocalStorage();
   return (
     <>
-      <Counter />
+      {/* <Counter />
       <FetchUrl />
       <Toggle />
       <SetTheme />
@@ -22,7 +23,8 @@ function App() {
       <ClickBTnThrole />
       <Previous />
       <ClipboardDemo />
-      <Status />
+      <Status /> */}
+      <UserProfile />
     </>
   );
 }

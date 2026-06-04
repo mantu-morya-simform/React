@@ -3,11 +3,11 @@ type LikeButtonProps = {
   setCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const LikeButton = ({ count, setCount }: LikeButtonProps) => {
+const LikeButton = ({ children }: LikeButtonProps) => {
   return (
     <div>
-      <p>Like Count :{count}</p>
-      <button onClick={() => setCount((prev) => prev + 1)}>
+      <p>Like Count :{children.count}</p>
+      <button onClick={() => children.setCount((prev) => prev + 1)}>
         <span>❤️</span>
       </button>
     </div>

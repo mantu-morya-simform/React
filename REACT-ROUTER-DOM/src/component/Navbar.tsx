@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import useAuth from "../context/useAuth";
 
 function Navbar() {
+  const auth = useAuth();
   const linkStyle = "px-4 py-2 rounded-md text-sm font-medium transition";
   const active = "bg-blue-500 text-white";
   const inactive = "text-gray-700 hover:bg-gray-200";
@@ -64,6 +66,28 @@ function Navbar() {
           >
             Products
           </NavLink>
+
+          {auth.user && (
+            <NavLink
+              to="/profile"
+              className={({ isActive }) =>
+                `${linkStyle} ${isActive ? active : inactive}`
+              }
+            >
+              Profile
+            </NavLink>
+          )}
+
+          {!auth.user && (
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                `${linkStyle} ${isActive ? active : inactive}`
+              }
+            >
+              Login
+            </NavLink>
+          )}
         </div>
       </div>
     </nav>

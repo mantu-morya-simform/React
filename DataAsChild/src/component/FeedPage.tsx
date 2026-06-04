@@ -8,7 +8,7 @@ const FeedPage = () => {
   return (
     <div>
       <PostCard title={"Child Data"}>
-        <LikeButton count={count} setCount={setCount} />
+        <LikeButton>{{ count, setCount }}</LikeButton>
       </PostCard>
     </div>
   );
