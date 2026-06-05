@@ -1,0 +1,16 @@
+.count__cont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px;
+}
+
+.btn__cont {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn__cont button {
+  padding: 10px 20px;
+}
