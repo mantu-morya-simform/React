@@ -9,12 +9,13 @@ import Search from "./component/Search";
 import SetTheme from "./component/SetTheme";
 import ShowOnlineStatus from "./component/ShowOnlineStatus";
 import Toggle from "./component/Toggle";
-import UserProfile from "./component/UserProfile";
 import CurrentWindowSIze from "./component/CurrentWindowSIze";
 import useLocalStorage from "./hooks/useLocalStorage";
 import ScrollPosition from "./component/ScrollPosition";
 import InputHook from "./component/InputHook";
 import FormValues from "./component/FormValues";
+import ApiCallThreeTimeEffectCond from "./component/ApiCallThreeTimeEffectCond";
+import ShowMoreHook from "./component/ShowMoreHook";
 
 function App() {
   useLocalStorage();
@@ -29,13 +30,15 @@ function App() {
       <Previous />
       <ClipboardDemo />
       <Status /> */}
-      {/* <UserProfile /> */}
+      {/* <ApiCallThreeTimeEffectCond /> */}
       {/* <RunOnInterval /> */}
       {/* <CurrentWindowSIze /> */}
       {/* <ShowOnlineStatus /> */}
       {/* <ScrollPosition /> */}
       {/* <InputHook /> */}
-      <FormValues />
+      {/* <FormValues /> */}
+
+      <ShowMoreHook />
     </>
   );
 }

@@ -17,8 +17,8 @@ function useEffectCond(
       stopped.current = true;
     };
 
-    callback(stop);
-  }, dependencies);
+    return callback(stop);
+  }, [...dependencies]);
 }
 
 export default useEffectCond;
