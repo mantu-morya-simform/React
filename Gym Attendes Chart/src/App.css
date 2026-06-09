@@ -1,40 +1,82 @@
 .main__grid {
-  width: 500px;
+  height: 600px;
+  width: 800px;
   display: flex;
-  justify-content: space-around;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
   padding: 10px;
 }
 
-.child__grid__1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  height: 200px;
-}
-
-.done {
-  width: 30px;
-  background: blue;
-}
-
 .main__grid__comp {
   width: 500px;
+  height: 100%;
   display: flex;
-  gap: 50px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
-
-.chart {
-  display: flex;
-  flex-direction: row;
   gap: 10px;
 }
 
+.chart {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+
 .child__grid__1 {
-  /* height: 100%; */
+  width: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
+}
+
+
+.grid__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 15px;
+  overflow: hidden;
+}
+
+.done {
+  width: 100%;
+  height: 40px;
+  background: blue;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.data {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid black;
+  font-size: large;
+  font-weight: bold;
+}
+
+
+.action__btn {
+  display: flex;
+  gap: 20px;
+}
+
+.action__btn button {
+  padding: 10px 20px;
+}
+
+.prev__btn,
+.next__btn {
+  background: #f04135;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
