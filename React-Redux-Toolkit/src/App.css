@@ -14,3 +14,65 @@
 .btn__cont button {
   padding: 10px 20px;
 }
+
+.todo__main {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.todo__main button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.driver-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 20px;
+  height: 600px;
+  overflow: auto;
+}
+
+.driver-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e5e5;
+  min-width: 280px;
+}
+
+.driver-name {
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: #222;
+}
+
+.driver-card p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.wiki-link {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.wiki-link:hover {
+  text-decoration: underline;
+}
+
+.action__btn {
+  display: flex;
+  gap: 20px;
+}

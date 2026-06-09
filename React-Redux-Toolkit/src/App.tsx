@@ -6,17 +6,20 @@ import {
   incrementByOne,
   incrementByTen,
 } from "./Redux/slices/countSlice";
+import Todo from "./component/Todo";
 
 const App = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   return (
     <div>
-      <Counter />
+      {/* <Counter />
       <div className="btn__cont">
         <button onClick={() => dispatch(incrementByOne())}>+1</button>
         <button onClick={() => dispatch(decrementByOne())}>-1</button>
         <button onClick={() => dispatch(incrementByTen())}>+10</button>
-      </div>
+      </div> */}
+
+      <Todo />
     </div>
   );
 };

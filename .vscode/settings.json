@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["initialvalue", "redirectpath"]
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.words": ["initialvalue", "redirectpath", "thunktodo"],
+  "editor.formatOnSave": true,
+  "editor.formatOnType": false,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  }
 }
