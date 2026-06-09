@@ -1,0 +1,40 @@
+.main__grid {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.child__grid__1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 200px;
+}
+
+.done {
+  width: 30px;
+  background: blue;
+}
+
+.main__grid__comp {
+  width: 500px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.chart {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.child__grid__1 {
+  /* height: 100%; */
+  border: 1px solid black;
+}
