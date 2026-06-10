@@ -4,7 +4,9 @@ import ShowDate from "./component/ShowDate";
 function App() {
   return (
     <div className="main__app">
-      <ShowDate />
+      <div className="main__wrapper">
+        <ShowDate />
+      </div>
     </div>
   );
 }

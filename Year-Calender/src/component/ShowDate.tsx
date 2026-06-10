@@ -28,7 +28,7 @@ const ShowDate = () => {
   const currYear = dayjs().year(); // give the curr year
   const isLeapYear: boolean =
     (currYear % 4 === 0 && currYear % 100 !== 0) || currYear % 400 === 0; // function to check leap year
-  const allday = isLeapYear ? 367 : 365; // according to year that is leap or not assign all days on it
+  const allday = isLeapYear ? 366 : 365; // according to year that is leap or not assign all days on it
 
   return (
     <div>

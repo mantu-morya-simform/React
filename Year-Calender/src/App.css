@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111827;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main__app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.main__wrapper {
+  width: 100%;
+  max-width: 1200px;
+  background: #1f2937;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.main__calender {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.day {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.day:hover {
+  transform: scale(1.15);
+}
+
+.completed {
+  background: #6b7280;
+}
+
+.currDay {
+  background: #22c55e;
+}
+
+.date__info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.date__info p {
+  min-width: 220px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #425369;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+@media (max-width: 480px) {
+  .main__app {
+    padding: 10px;
+  }
+
+  .main__wrapper {
+    padding: 15px;
+    border-radius: 14px;
+  }
+
+  .main__calender {
+    gap: 4px;
+  }
+
+  .day {
+    width: 10px;
+    height: 10px;
+  }
+
+  .date__info {
+    margin-top: 25px;
+    gap: 10px;
+  }
+
+  .date__info p {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px;
+  }
+}
