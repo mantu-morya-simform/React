@@ -1,20 +1,20 @@
+import { useState } from "react";
 import "../App.css";
 
 type GymAttendanceChartDataProp = {
   attendance: number[];
-  currWindow: number;
-  setCurrentWindow: React.Dispatch<React.SetStateAction<number>>;
+  col: number;
 };
 
 const GymAttendanceChart = ({
   attendance,
-  currWindow,
-  setCurrentWindow,
+  col,
 }: GymAttendanceChartDataProp) => {
+  const [currWindow, setCurrentWindow] = useState<number>(0);
   return (
     <div className="main__grid__comp">
       <div className="chart">
-        {attendance.slice(currWindow, currWindow + 7).map((data) => {
+        {attendance.slice(currWindow, currWindow + col).map((data) => {
           return (
             <div className="child__grid__1" key={crypto.randomUUID()}>
               <div className="grid__main">
@@ -39,7 +39,7 @@ const GymAttendanceChart = ({
         <button
           className="next__btn"
           onClick={() => setCurrentWindow((prev) => prev + 1)}
-          disabled={attendance.length - currWindow > 6 ? false : true}
+          disabled={attendance.length - currWindow > 7 ? false : true}
         >
           Next
         </button>
