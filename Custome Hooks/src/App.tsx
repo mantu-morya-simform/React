@@ -16,6 +16,7 @@ import InputHook from "./component/InputHook";
 import FormValues from "./component/FormValues";
 import ApiCallThreeTimeEffectCond from "./component/ApiCallThreeTimeEffectCond";
 import ShowMoreHook from "./component/ShowMoreHook";
+import Form from "./component/Form";
 
 function App() {
   useLocalStorage();
@@ -38,7 +39,9 @@ function App() {
       {/* <InputHook /> */}
       {/* <FormValues /> */}
 
-      <ShowMoreHook />
+      {/* <ShowMoreHook /> */}
+
+      <Form />
     </>
   );
 }
