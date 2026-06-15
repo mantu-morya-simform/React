@@ -66,7 +66,7 @@ const Form = () => {
           <p className="text-red-500 text-sm">{err?.name}</p>
         </div>
 
-        {/* Email */}
+        {/* email */}
         <div className="mb-4">
           <label className="mb-2 block text-sm font-medium">Email</label>
           <input
