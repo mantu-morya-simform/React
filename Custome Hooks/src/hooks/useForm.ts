@@ -26,7 +26,7 @@ function useForm(initialValues, validate, submit) {
     }
   };
 
-  return { values, error, handleChange, handleSubmit, reset, setValues };
+  return { values, error, handleChange, handleSubmit, reset };
 }
 
 export default useForm;

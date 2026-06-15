@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.main__search {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.progress__parent {
+  height: 50px;
+  width: 500px;
+  background: gray;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.progress__comp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: rgb(64, 177, 64);
+  color: black;
+}
+
+.search__btn {
+  background: rgb(109, 109, 240);
+  border: none;
+  outline: none;
+  padding: 20px 50px;
+  cursor: pointer;
+}
+
+.search__btn:hover {
+  background: rgb(71, 71, 230);
+}

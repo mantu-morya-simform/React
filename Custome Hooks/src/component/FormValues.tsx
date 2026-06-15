@@ -18,8 +18,11 @@ const FormValues = () => {
     return errors;
   }
 
-  const { values, error, handleChange, handleSubmit, reset, setValues } =
-    useForm({ name: "", email: "" }, validate, submit);
+  const { values, error, handleChange, handleSubmit, reset } = useForm(
+    { name: "", email: "" },
+    validate,
+    submit,
+  );
 
   return (
     <div>
