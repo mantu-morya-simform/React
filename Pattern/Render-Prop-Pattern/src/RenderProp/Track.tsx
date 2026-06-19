@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const CarTracker = () => {
+const Track = ({ render }) => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -21,11 +21,9 @@ const CarTracker = () => {
         fontFamily: "sans-serif",
       }}
     >
-      <h1>
-        🚗 Car is At ({pos.x}, {pos.y})
-      </h1>
+      {render(pos)}
     </div>
   );
 };
 
-export default CarTracker;
+export default Track;

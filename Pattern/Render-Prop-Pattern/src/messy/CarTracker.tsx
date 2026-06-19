@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BikeTracker = () => {
+const CarTracker = () => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -22,10 +22,10 @@ const BikeTracker = () => {
       }}
     >
       <h1>
-        🚴 Bike is At ({pos.x}, {pos.y})
+        🚗 Car is At {pos.x}, {pos.y}
       </h1>
     </div>
   );
 };
 
-export default BikeTracker;
+export default CarTracker;

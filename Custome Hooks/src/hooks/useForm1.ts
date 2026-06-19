@@ -41,10 +41,9 @@ const useForm1 = (
   return {
     data,
     handleChange,
-    err,
-    setErr,
     handleSubmit,
     reset,
+    err,
   };
 };
 
