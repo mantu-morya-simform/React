@@ -11,8 +11,7 @@ function App() {
   const trafficLightData: TrafficLightDataType = [
     { color: "red", duration: 2, next: "yellow" },
     { color: "yellow", duration: 2, next: "green" },
-    { color: "green", duration: 2, next: "blue" },
-    { color: "blue", duration: 2, next: "" },
+    { color: "green", duration: 2, next: "yellow" },
   ];
 
   return (
